@@ -1,0 +1,17 @@
+1. Actualuzae paquetes 
+	- sudo apt-get update  Actualizar
+2. Instalar vim 
+	- sudo apt-get install vim
+3. Configuracion de SSH, para acceder desde el local a la virtual
+	- Configuracion -> Red -> Adaptador 1 -> adaptador puente -> Aceptar
+	- Cerrar sesion, Reiniciar Ubuntu
+	- sudo apt install openssh-server
+	- Si no se instala actualizar el ntp, (Network Time Protocol) sudo apt-get install ntp
+	- Iniciar SSH : sudo systemctl start ssh
+	- Validar status : sudo systemctl status ssh
+	- Activar sudo systemctl enable ssh
+	- Deberia decir en verde : active (running)
+	- Instalar net-tools :  sudo apt-get install net-tools
+	- Ver la ip : ip a
+	- Nuestra ip aparece en : inet 192.168.0.12/24
+

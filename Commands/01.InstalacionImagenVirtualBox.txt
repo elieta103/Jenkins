@@ -1,0 +1,10 @@
+1. Descargar e instalar VirtualBox
+2. Descargar e instalar Ubuntu 22.10 Kinetic Kudu
+3. Crear maquina desde VirtualBox
+	- Maquina->Nueva
+	- Nombre : Ubuntu Jenkins, Tipo: Linux, Version : Ubuntu 64-bits   -> Siguente
+	- Memoria Base : 1024 Kb -> Siguiente
+	- Usar un archivo de disco duro virtual existente -> Explorar -> Añadir
+	- Para eliminar DD que cambiaron de ubicacion, solo borrar y volver a crear la carpeta : C:\Users\gress\VirtualBox VMs -> Siguiente
+	- Tomar un snapshot, instantanea de la original, para volver a la maquina original.
+	- User : osboxes.org,  Password : osboxes.org

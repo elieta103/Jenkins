@@ -1,0 +1,35 @@
+1. Descargar la imagen de Jenkins
+	a. docker pull jenkins/jenkins
+
+2. Validar las imagenes instaladas
+	a. docker images
+
+3. Creacion de carpetas
+	a. mkdir -p jenkins/jenkins_home
+
+4. Otorgar permisos a la carpeta de jenkins
+	a. Antes de los permisos : drwxrwxr-x 3 osboxes osboxes 4096 Jun 18 18:47 jenkins
+	b. chown 1000 jenkins
+
+5. Crear docker-compose.yml
+
+6. Ejecutar docker-compose.yml
+	a. docker-compose up -d
+	b. docker ps -a
+
+7. Desde la maquina host, no la virtual
+	a. http://192.168.0.12:8080
+
+8. Obtener password
+	a. desde jenkins
+	b. cat jenkins_home/secrets/initialAdminPassword : 8cc2bd34ddcd492ba694ec4b9364f541
+
+9. Desde el container
+	a. docker exec -it jenkins bash
+	b. cd /var/jenkins_home/secret
+	c. cat initialAdminPassword => 8cc2bd34ddcd492ba694ec4b9364f541
+
+10. Datos del usuario admin
+	a. usr : gresshel
+	b. pwd : elieta103
+	c. mail: gresshel@gmail.com

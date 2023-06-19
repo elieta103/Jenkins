@@ -1,0 +1,51 @@
+INSTALL DOCKER
+
+1. Update the apt package index and install packages to allow apt to use a repository over HTTPS:
+	a. sudo apt-get update
+ 	b. sudo apt-get install ca-certificates curl gnupg
+
+2. Add Docker’s official GPG key:
+ 	a. sudo install -m 0755 -d /etc/apt/keyrings
+ 	b. curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+ 	c. sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+3. Use the following command to set up the repository:
+ 	a. echo \
+  	 "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  	 "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  	 sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+4. Update the apt package index:
+ 	a. sudo apt-get update
+
+5. Install Docker Engine, containerd, and Docker Compose.
+	a. sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+6. Start docker
+	a. systemctl start docker
+
+7. Agregar al usuario, permisos al grupo de docker
+	a. sudo usermod -aG docker osboxes
+
+6. Verify that the Docker Engine installation is successful by running the hello-world image.
+	a. sudo docker run hello-world
+	b. Cerrar session, reiniciar.
+
+7. Si existe un error
+	a. sudo chmod 666 /var/run/docker.sock
+
+8. Validar version docker
+	a. docker version
+
+
+INSTALL DOCKER-COMPOSE
+1. Ejecutar el comando. Validar la ultima version
+	a. sudo curl -L "https://github.com/docker/compose/releases/download/2.18.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+2. Agregar permisos de ejecucion al binario
+	a. sudo chmod +x /usr/local/bin/docker-compose
+
+3. Validar la correcta instalacion
+	a. docker compose version
+
+

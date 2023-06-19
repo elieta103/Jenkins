@@ -1,0 +1,33 @@
+¿Cómo utilizar Putty?
+
+1. Inicia la máquina virtual Ubuntu en VirtualBox y obtén la dirección IP:
+	a. Inicia la máquina virtual Ubuntu si aún no lo has hecho.
+	b. Abre un terminal en Ubuntu y ejecuta el siguiente comando para obtener la dirección IP: ip addr show
+	c. Busca la dirección IP en la salida del comando (por lo general, está junto a "inet" en la interfaz de red, por ejemplo: inet 192.168.1.100/24).
+	   Entonces en este caso de ejemplo sería "192.168.1.100"
+
+
+2. Conéctate a la máquina virtual Ubuntu usando PuTTY:
+	a. Abre PuTTY en tu sistema Windows.
+	b. En la sección "Host Name (or IP address)", introduce osboxes@<IP_UBUNTU> (reemplaza <IP_UBUNTU> con la dirección IP de tu máquina virtual Ubuntu).
+	c. El puerto del host que configuraste en "Port" (suele ser 22 por defecto). 
+	d. Asegúrate de que la conexión esté configurada para usar SSH y el puerto sea 22 (si no configuraste el reenvío de puertos).
+	e. Haz clic en "Open" para iniciar la conexión SSH.
+
+3. Ingresa el usuario
+
+4. La contraseña
+
+5. ¡Listo!
+
+
+
+
+
+
+
+
+
+
+
+	
