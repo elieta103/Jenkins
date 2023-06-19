@@ -1,0 +1,32 @@
+1. Con la maquina ubuntu desconectada
+	a. Configuracion -> Red -> Adaptador 1 -> NAT -> Aceptar
+	b. Herramientas -> Red -> Si no hay hacer click en crear
+	c. Si hay creada una, click derecho -> propiedades ->Deshabilitar Servidor DHCP -> Aplicar
+	d. Maquina Ubuntu -> Configuracion -> Red -> Adaptador 2 -> Habilitar adaptador de red ->Adaptador Solo-anfitrion -> Seleccionar en nombre , la red previa vboxnet0 -> Aceptar
+
+2. Iniciar la maquina ubuntu
+	a. Desde la Terminal : ifconfig
+	b. Aparece habilitado el : enp0s8, pero no deberia aparecer la IP
+	c. Teclear : sudo vi /etc/network/interfaces, se configura con respecto al que no tiene IP
+		auto enp0s8
+		iface enp0s8 inet static
+			address 192.168.56.10		
+			netmask 255.255.255.0
+		Esc: wq!
+	d. Instalar : sudo apt install ifupdown
+	e. Validar Ok : sudo ifup enp0s8
+	f. Reiniciar : reboot
+	g. Teclear : ifconfig, Deberia aparecer la configuracion del nuevo adaptador en enp0s8: inet 192.168.56.10
+
+3. Cambiar las IP en Putty y WinSCP 
+	a. IP : 192.168.56.10 
+
+4. Validar que jenkins inicia en nueva IP
+	a. cd /jenkins
+	b. docker compose start
+	c. http://192.168.56.10:8080   user : gresshel  pwd : elieta103
+
+
+
+
+
